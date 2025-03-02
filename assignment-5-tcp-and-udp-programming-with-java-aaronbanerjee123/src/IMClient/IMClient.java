@@ -152,7 +152,7 @@ public class IMClient {
 
 		try {
 			System.out.println("Enter your new user id: ");
-			String userId = getLine();
+			userId = getLine();
 
 		
 			String registerRequest = String.format("REG %s", userId);
@@ -167,7 +167,7 @@ public class IMClient {
 			System.out.println(regResponse);
 
 			status = onlineStatus;
-			tempSocket.close();
+			// tempSocket.close();
 
 			// messageSocket = new Socket("localhost", TCPMessagePort);
 			// toUser = new DataOutputStream(messageSocket.getOutputStream());
@@ -588,9 +588,7 @@ public class IMClient {
 
 		public void run() {
 			try {
-
 				timer.schedule(task, 0, 10000);
-				printMenu();
 			} catch (Exception e) {
 				System.out.println(e);
 			}
